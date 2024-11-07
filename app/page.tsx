@@ -1,3 +1,5 @@
+'use client';
+
 import ShortUrlForm from '@/components/ShortUrlForm';
 
 export default function Index() {

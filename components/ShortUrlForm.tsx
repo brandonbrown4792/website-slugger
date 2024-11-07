@@ -8,6 +8,9 @@ import Link from 'next/link';
 
 export default function ShortUrlForm() {
   const [validSlug, setValidSlug] = useState<string | null>(null);
+
+  // This causes an error, but too tired to figure out how to get the full base path using next navigation
+  // Looks like base path is not supported by next navigation :(
   const hostUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}`;
 
   const form = useForm({

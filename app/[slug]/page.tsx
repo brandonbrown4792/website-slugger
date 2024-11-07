@@ -1,12 +1,12 @@
 import { fetchUrlFromSlug } from '@/database/url';
-import { NextPageContext } from 'next';
 import { notFound, redirect, RedirectType } from 'next/navigation';
 
 export default async function SlugPage({
-  params: { slug },
+  params,
 }: {
   params: { slug: string };
 }) {
+  const { slug } = await params;
   const { data } = await fetchUrlFromSlug(slug);
 
   if (!data || !data.url) {
